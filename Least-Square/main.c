@@ -31,9 +31,6 @@ int main(void)
     printf("Matrix A: \n");
     printMatrix(matrixA, A_rows, A_cols);
 
-    rref(matrixA, A_rows, A_cols);
-    printMatrix(matrixA, A_rows, A_cols);
-
     double* matrixA_transpose = copyMatrix(matrixA, A_rows, A_cols);
     int At_rows = A_rows, At_cols = A_cols;
 
@@ -52,20 +49,24 @@ int main(void)
         scanf("%lf", &bCol[i]);
     }
     printf("\n");
-    
-    double* test = addZeroColum(matrixA, A_rows, A_cols, bCol);
 
-    printf("Combined Matrix: \n");
-    printMatrix(test, A_rows, A_cols + 1);
+    double* rhs = multiplication(matrixA_transpose, At_rows, At_cols, bCol, A_rows, 1);
+    printf("rhs: \n");
+    printMatrix(rhs, At_rows, 1);
 
-    double* resultMatrix = multiplication(matrixA, A_rows, A_cols, matrixA_transpose, At_rows, At_cols);
+    double* lhs = multiplication(matrixA_transpose, At_rows, At_cols, matrixA, A_rows, A_cols);
+    printf("lhs: \n");
+    printMatrix(lhs, At_rows, A_cols);
 
-    printf("Least Square: \n");
-    printMatrix(resultMatrix, A_rows, At_cols);
+    double* augmented_matrix = addZeroColum(lhs, At_rows, A_cols, rhs);
+
+    rref(augmented_matrix, At_rows, A_cols + 1, 1);
 
     free(matrixA);
     free(bCol);
     free(matrixA_transpose);
-    free(resultMatrix);
+    free(rhs);
+    free(lhs);
+    free(augmented_matrix);
     return 0;
 }
