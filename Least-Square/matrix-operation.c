@@ -169,7 +169,7 @@ void max(double* value, int* pivIdx, double *matrix, int row, int col, int a, in
 
 void findSolution(double* matrix, int row, int col, int pivCount);
 
-void rref(double *matrix, int row, int col)
+void rref(double *matrix, int row, int col, int sol)
 {
     // 
     double pivValue[col];
@@ -298,7 +298,10 @@ void rref(double *matrix, int row, int col)
 
     printMatrix(matrix, row, col);
 
-    findSolution(matrix, row, col, pivCount);
+    if (sol == 1)
+    {
+        findSolution(matrix, row, col, pivCount);
+    }
 }
 
 void findSolution(double* matrix, int row, int col, int pivCount)
@@ -349,6 +352,8 @@ void findSolution(double* matrix, int row, int col, int pivCount)
     //     }
     // }
 
+    printf("Result: \n");
+
     for (i = row - 1; i >= 0; i--)
     {
         for (j = 0; j < col; j++)
@@ -383,4 +388,5 @@ void findSolution(double* matrix, int row, int col, int pivCount)
         }
         printf("\n");
     }
+    printf("\n");
 }
