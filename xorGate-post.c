@@ -221,6 +221,38 @@ int main(void)
         }
     }
 
+    // looking into individual neurons
+    printf("---------------------\n");
+    printf("OR Neuron \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d || %d = %f \n", i, j, sigmoidf(i*m->or_w1 + j*m->or_w2 + m->or_b));
+        }
+    }
+
+    printf("---------------------\n");
+    printf("NAND Neuron \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("~(%d && %d) = %f \n", i, j, sigmoidf(i*m->nand_w1 + j*m->nand_w2 + m->nand_b));
+        }
+    }
+
+    printf("---------------------\n");
+    printf("AND Neuron \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d && %d = %f \n", i, j, sigmoidf(i*m->and_w1 + j*m->and_w2 + m->and_b));
+        }
+    }
+
+
     free(m);
     return 0;
 }
