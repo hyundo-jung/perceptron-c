@@ -16,6 +16,14 @@ float train[][3] = {
     {1, 1, 1}, 
 };
 
+// AND gate
+// float train[][3] = {
+//     {0, 0, 0},
+//     {1, 0, 0},
+//     {0, 1, 0},
+//     {1, 1, 1},
+// };
+
 #define train_count sizeof(train) / sizeof(train[0])
 
 float rand_float()
