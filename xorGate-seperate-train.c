@@ -10,7 +10,7 @@ float sigmoidf(float x)
 
 typedef float sample[3];
 
-// XOR gate
+// gate train data
 sample or_train[] = {
     {0, 0, 0},
     {1, 0, 1},
@@ -177,6 +177,36 @@ int main()
             float y =  sigmoidf(i * w1_nandGate + j * w2_nandGate + b_nandGate); // NAND Gate result
 
             printf("%d | %d = %f \n", i, j, sigmoidf(x * w1_andGate + y * w2_andGate + b_andGate));
+        }
+    }
+
+    printf("---------------------\n");
+    printf("OR NEURON \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d | %d = %f\n", i, j, sigmoidf(i * w1_orGate + j * w2_orGate + b_orGate));
+        }
+    }
+
+    printf("---------------------\n");
+    printf("NAND NEURON \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("~(%d & %d) = %f\n", i, j, sigmoidf(i * w1_nandGate + j * w2_nandGate + b_nandGate));
+        }
+    }
+
+    printf("---------------------\n");
+    printf("AND NEURON \n");
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d & %d = %f\n", i, j, sigmoidf(i * w1_andGate + j * w2_andGate + b_andGate));
         }
     }
 
