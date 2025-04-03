@@ -20,7 +20,6 @@ A single neuron (perceptron) can only solve problems that are linearly separable
 
 For OR, AND, NOR, and NAND, output classes can be seperated by a single straight line (draw x1 and x2 axis and plot the values for visualization). However, for XOR, that is not possible. Thus, we include multiple layers of neurons to transform the input space (x1, x2 axis) such that output classes are linearly separable.  
 
-Illustration of linearly separable data
 ![image](https://github.com/user-attachments/assets/dfaef9a5-d52a-4221-8a1f-434a8b4e3634)
 
 **Seperately trained neurons**
