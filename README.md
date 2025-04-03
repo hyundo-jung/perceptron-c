@@ -25,4 +25,4 @@ For OR, AND, NOR, and NAND, output classes can be seperated by a single straight
 **Seperately trained neurons**
 xorGate-seperated.c shows three individual neurons trained with OR, NAND, AND data individually and combined to later to operate as XOR gate. But, obviously, this is not a neural network as there is no connection between neurons. 
 
-Neural network has neurons that are interconnected. For XOR gate, we assumed two neurons in hidden layers will operate as OR, NAND gates. However, they do not. We cannot interpreate output of individual neuron to understand its purpose and functionality.  
+Neural network has neurons that are interconnected. For XOR gate, we assumed two neurons in hidden layers will operate as OR, NAND gates. However, they do not.
