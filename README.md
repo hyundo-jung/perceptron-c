@@ -1,6 +1,6 @@
 # perceptron in C
 
-resources, credits: [Tsoding](https://www.youtube.com/watch?v=PGSba51aRYU)
+Note: I have made by models followed watching Tsoding's video ([Tsoding](https://www.youtube.com/watch?v=PGSba51aRYU)). All credit goes to him. I have extended his work by adding seperated three perceptrons model to distinguish difference between implementing XOR gate through a neural network and pure logic. 
 
 ## Summary
 **Basic Machine Learning Model in C**
