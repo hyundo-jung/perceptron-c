@@ -6,7 +6,7 @@ Note: I have made by models followed watching Tsoding's video ([Tsoding](https:/
 **Basic Machine Learning Model in C**
 
 Single neuron
-- Resembled a perceptron using finite difference and gradient descant
+- Resembled a perceptron using finite difference
 - Trained to function as OR, AND, NAND, or NOR logic gate
 
 Multi layer neuron
