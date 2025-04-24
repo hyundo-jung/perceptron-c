@@ -228,7 +228,10 @@ int main(void)
     {
         for (int j = 0; j < 2; j++)
         {
-            printf("%d || %d = %f \n", i, j, sigmoidf(i*m->or_w1 + j*m->or_w2 + m->or_b));
+            printf("first neuron of first layer: %d | %d = %f \n", i, j, sigmoidf(i*m->or_w1 + j*m->or_w2 + m->or_b));
+            printf("second neuron of first layer: %d | %d = %f \n", i, j, sigmoidf(i*m->nand_w1 + j*m->nand_w1 + m->nand_b));
+            printf("neuron of second layer: %d | %d = %f \n", i, j, sigmoidf(i*m->and_w1 + j*m->and_w1 + m->and_b));
+            printf("\n");
         }
     }
 
@@ -238,7 +241,10 @@ int main(void)
     {
         for (int j = 0; j < 2; j++)
         {
-            printf("~(%d && %d) = %f \n", i, j, sigmoidf(i*m->nand_w1 + j*m->nand_w2 + m->nand_b));
+                printf("first neuron of first layer: ~(%d & %d) = %f \n", i, j, sigmoidf(i*m->or_w1 + j*m->or_w2 + m->or_b));
+                printf("second neuron of first layer: ~(%d & %d) = %f \n", i, j, sigmoidf(i*m->nand_w1 + j*m->nand_w1 + m->nand_b));
+                printf("neuron of second layer: ~(%d & %d) = %f \n", i, j, sigmoidf(i*m->and_w1 + j*m->and_w1 + m->and_b));
+                printf("\n");
         }
     }
 
@@ -248,7 +254,10 @@ int main(void)
     {
         for (int j = 0; j < 2; j++)
         {
-            printf("%d && %d = %f \n", i, j, sigmoidf(i*m->and_w1 + j*m->and_w2 + m->and_b));
+            printf("first neuron of first layer: %d & %d = %f \n", i, j, sigmoidf(i*m->or_w1 + j*m->or_w2 + m->or_b));
+            printf("second neuron of first layer: %d & %d = %f \n", i, j, sigmoidf(i*m->nand_w1 + j*m->nand_w1 + m->nand_b));
+            printf("neuron of second layer: %d & %d = %f \n", i, j, sigmoidf(i*m->and_w1 + j*m->and_w1 + m->and_b));
+            printf("\n");
         }
     }
 
